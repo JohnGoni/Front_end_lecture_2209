@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function evenOdd() {
+            const num = Number(document.getElementById('num').value);
+            const res = document.getElementById('result');
+            if (num % 400 === 0) {
+                res.innerHTML='<h4>윤년</h4>';
+            }
+            else if (num % 100 === 0) {
+                res.innerHTML='<h4>평년</h4>';
+            }
+            else if (num % 4 ===0) {
+                res.innerHTML='<h4>윤년</h4>'
+            }
+            else {
+                res.innerHTML=num
+            }
+        }
+    </script>
+</head>
+<body style="margin:50px;">
+    <input type="text" id="num" placeholder="궁금한 년도를 입력하세요">
+    <button onclick="evenOdd()">확인</button>
+    <br>
+    <p id="result"></p>
+</body>
+</html>
