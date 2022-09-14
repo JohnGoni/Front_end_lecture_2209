@@ -1,0 +1,11 @@
+Login: UID, password
+1) UID가 없는 경우  :   xxx
+2) uid는 있는데 password가 틀린 경우:  xxy, 123456
+3) password가 올바른 경우 : 로그인 성공
+
+데이터베이스
+    사용자 테이블
+        uid password name email
+
+        xx
+        xxy abcdef
