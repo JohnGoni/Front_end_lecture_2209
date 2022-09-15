@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1번 문제</title>
+    <script>
+       function setValue() {
+        a = parseInt(document.getElementById('a').value); // 입력값 받기
+	    b = parseInt(document.getElementById('b').value);
+       };
+
+       let box=[]
+       function result() {
+            setValue()
+            for(i=a;i<=b;i++) {
+                if (b>a){
+                    box.push(2**i);
+                }
+            }
+            const A = box.splice(1,1);
+            const B = box.splice(box.length-2,1);
+            document.getElementById('box').innerHTML = box
+       };
+
+       function array() {
+        setValue()
+        document.getElementById('result').value = result()
+       }
+    </script>
+</head>
+<body style="margin: 50px;">
+    <h2>계산기</h2>
+    첫번째 값의 범위는 1~20, 두 번째 값의 범위는 10~30이며 첫 번째 값은 두 번째 값보다 4이상 작아야 합니다.
+    <br><br>
+    <input type="number" style="width: 120pt;" min="1" max="20" id="a" placeholder="1~20 중에서 하나 입력" >
+    <br>
+    <input type="number" style="width: 120pt;" min="10" max="30" id="b" placeholder="10~30 중에서 하나 입력">
+    <hr>
+    <button type="button" onclick="array()">계산하기</button>
+    <p id="box"></p>
+</body>
+</html>
