@@ -28,6 +28,7 @@
         setValue()
         document.getElementById('result').value = result()
        }
+       
     </script>
 </head>
 <body style="margin: 50px;">
@@ -40,5 +41,35 @@
     <hr>
     <button type="button" onclick="array()">계산하기</button>
     <p id="box"></p>
+    <script>
+        let count = 3;
+        const show = document.getElementById('show');
+        function disp(num) {
+            const img = document.createElement('img');
+            img.setAttribute('src', 'digits/'+num+'.svg');
+            img.setAttribute('width', '800');
+            img.setAttribute('id', 'second');
+            img.style.marginTop = '30px';
+            img.style.marginBottom = '200px';
+            img.style.marginLeft = '200px';
+            show.appendChild(img);
+        }
+        function hide() {
+            const sec = document.getElementById('second');
+            show.removeChild(sec);
+        }
+        function countDown() {
+            disp(count--);
+            let interval = setInterval(() => {
+                hide();
+                if (count != 0) 
+                    disp(count--);
+            }, 1000);
+            setTimeout(() => {
+                clearInterval(interval);
+            }, 3000);
+        }
+        window.onload = countDown;
+    </script>
 </body>
 </html>

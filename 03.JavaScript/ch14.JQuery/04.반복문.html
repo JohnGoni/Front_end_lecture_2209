@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+           /*  const lis = $('li');
+            for (let i=0; i<lis.length;i++) {
+                const li = lis.get(i);
+                if (i % 2 == 0)
+                    $(li).css('color','red')
+                else
+                    $(li).css('backgroundColor','beige')
+            } */
+            $('li').each(function(index,element){ 
+                if (index % 2 == 0)
+                    $(this).css('color','red');
+                else
+                    $(this).css('backgroundColor','beige')
+            });
+            //클래스가 national인 것의 폰트크기를 30px,20px로 변경
+            $('.national').each(function(index,element){
+                if (index % 2 == 0)
+                    $(this).css('fontSize','30px')
+                else
+                    $(this).css('fontSize','20px')
+            });
+        });
+    </script>
+    <title>문서 객체 반복</title>
+</head>
+<body style="margin: 50px;">
+    <ul id="fruits">내가 좋아하는 과일
+        <li class="national">사과</li>
+        <li class="national">감</li>
+        <li class="foreign">바나나</li>
+        <li class="foreign">파인애플</li>
+    </ul>
+    <hr>
+    <ul id="food">내가 좋아하는 음식
+        <li class="national">김치</li>
+        <li class="national">갈비찜</li>
+        <li class="foreign">파스타</li>
+    </ul>
+</body>
+</html>
