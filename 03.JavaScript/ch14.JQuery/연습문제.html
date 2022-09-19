@@ -15,16 +15,12 @@
             $('.1번show').click(function(e){
                 $('#first,#second,#result1,#1번').show();
             })
-        })
-        $(document).ready(function(){
             $('.2번hide').click(function(e){
                 $('#text,#result2,#2번').hide();
             })
             $('.2번show').click(function(e){
                 $('#text,#result2,#2번').show();
             })
-        })
-        $(document).ready(function(){
             $('.3번hide').click(function(e){
                 $('#num1,#num2,#result3,#3번').hide();
             })
@@ -80,17 +76,23 @@
         let count = 3;
         const show = document.getElementById('show');
         function disp(num) {
-            const img = document.createElement('img');
+            $('<img></img>')
+            .attr('src','../ch13.문서객체모델/digits/'+num+'.svg')
+            .attr('width','800')
+            .attr('id','second')
+            .css({marginTop:'30px',marginBottom:'200px',marginLeft:'200px'})
+            .appendTo(show)
+            /* const img = document.createElement('img');
             img.setAttribute('src', 'digits/'+num+'.svg');
             img.setAttribute('width', '800');
             img.setAttribute('id', 'second');
             img.style.marginTop = '30px';
             img.style.marginBottom = '200px';
             img.style.marginLeft = '200px';
-            show.appendChild(img);
+            show.appendChild(img); */
         }
         function hide() {
-            const sec = document.getElementById('second');
+            const sec = $('#second');
             show.removeChild(sec);
         }
         function countDown() {

@@ -1,6 +1,6 @@
 function answer1() {
-    const first = parseInt(document.getElementById('first').value);
-    const second = parseInt(document.getElementById('second').value);
+    const first = parseInt($('#first').val());
+    const second = parseInt($('#second').val());
     console.log(first, second);
     let result = [];
     for (let i=first; i<=second; i++) {
@@ -12,7 +12,7 @@ function answer1() {
 }
 
 function answer2() {
-    const text = document.getElementById('text').value;
+    const text = $('#text').val();
     const noPunct = text.replace(/[-',.]/g, '').replace(/\n/g, ' ');    // 구둣점 제거, 줄바꿈은 공백으로 변경
     console.log(noPunct);
     const words = noPunct.split(' ');
@@ -25,8 +25,8 @@ function answer2() {
 }
 
 function answer3() {
-    const num1 = parseInt(document.getElementById('num1').value);
-    const num2 = parseInt(document.getElementById('num2').value);
+    const num1 = parseInt($('#num1').val());
+    const num2 = parseInt($('#num2').val());
     const divisors1 = [];
     for (let i=1; i<=num1; i++) {
         if (num1 % i == 0)
